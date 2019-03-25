@@ -22,9 +22,7 @@ ITrigger trigger = TriggerBuilder.Create()
 # call  Execute
 async  System.Threading.Tasks.Task IJob.Execute(IJobExecutionContext context)
 {
-
-    var result = await DeleteAllFile(System.Web.Hosting.HostingEnvironment.MapPath("/PdfFiles/"));
-
+  var result = await DeleteAllFile(System.Web.Hosting.HostingEnvironment.MapPath("/PdfFiles/"));
 }
 
 # call JobScheduler in  Application_Start of  Global.asax.cs
