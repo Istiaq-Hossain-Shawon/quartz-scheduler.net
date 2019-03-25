@@ -20,12 +20,13 @@ ITrigger trigger = TriggerBuilder.Create()
 .Build();
 
 # call  Execute
- async  System.Threading.Tasks.Task IJob.Execute(IJobExecutionContext context)
-  {
+async  System.Threading.Tasks.Task IJob.Execute(IJobExecutionContext context)
+{
 
-      var result = await DeleteAllFile(System.Web.Hosting.HostingEnvironment.MapPath("/PdfFiles/"));
+    var result = await DeleteAllFile(System.Web.Hosting.HostingEnvironment.MapPath("/PdfFiles/"));
 
-  }
-  # call JobScheduler in  Application_Start of  Global.asax.cs
-  JobScheduler.Start();
+}
+
+# call JobScheduler in  Application_Start of  Global.asax.cs
+JobScheduler.Start();
 ```
